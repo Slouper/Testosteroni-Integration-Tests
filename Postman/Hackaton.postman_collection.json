@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "fc757168-c63e-481c-ac16-0a1c09c2a01d",
+		"name": "Hackaton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c167f21-fc1e-4ffd-a477-2441b478a346",
+						"exec": [
+							"pm.environment.set(\"testDuration\", 0);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cashloan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/cashloan",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"cashloan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "568cbeb5-ec35-4bad-ad38-c4b42fa5c261",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    ",
+							"pm.environment.set(\"loanKey\", jsonData.body._id);",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs,sk;q=0.8,en-US;q=0.5,en;q=0.3"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/cashloan"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"url": {
+					"raw": "http://206.189.249.28:3000/v1/client",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/loan",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs,sk;q=0.8,en-US;q=0.5,en;q=0.3"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/loanStep2?loanId=Ki_wLm0BkKsj5CVgHnjE"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://206.189.249.28:3000"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"loanId\":\"{{loanKey}}\",\"firstname\":\"Petr\",\"surname\":\"Sloup\",\"city\":\"Praha\",\"email\":\"petrsloup@sam.cz\",\"tel\":\"321654987\",\"rc\":\"32165487\"}"
+				},
+				"url": {
+					"raw": "http://206.189.249.28:3000/v1/loan",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/client/scoring",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs,sk;q=0.8,en-US;q=0.5,en;q=0.3"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/loanStep2?loanId=ckn9Lm0BDE8q0EwPKuhC"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"url": {
+					"raw": "http://206.189.249.28:3000/v1/client/scoring/{{loanKey}}",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"client",
+						"scoring",
+						"{{loanKey}}"
+					],
+					"query": [
+						{
+							"key": "loanId",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/jan.konigsmark/Downloads/IMG_2341 (1).jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://206.189.249.28:3000/v1/upload",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/personal-data",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "http://206.189.249.28:3000"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs-CZ,cs;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/loanStep5?loanId=H0kjL20BDE8q0EwP2ekV"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"loanId\":\"{{loanKey}}\",\"citizenship\":\"cyechia\",\"countryOfBird\":\"czech\",\"cityOfBird\":\"praha\",\"education\":\"nevim\",\"maritalStatus\":\"nevim\",\"typeOfHousing\":\"bez-domova\",\"profession\":\"zednik pyco\",\"dan\":\"ANO\"}"
+				},
+				"url": {
+					"raw": "http://206.189.249.28:3000/v1/personal-data",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"personal-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/docs/podminky.pdf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/loanStep6?loanId=H0kjL20BDE8q0EwP2ekV"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs-CZ,cs;q=0.9,en;q=0.8"
+					}
+				],
+				"url": {
+					"raw": "http://206.189.249.28:3000/docs/podminky.pdf",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"docs",
+						"podminky.pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/loan-calculator.js",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs-CZ,cs;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/cashloan"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"url": {
+					"raw": "http://206.189.249.28:3000/_next/static/TzHnIWU00abRFOZrMQowo/pages/loan-calculator.js",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"_next",
+						"static",
+						"TzHnIWU00abRFOZrMQowo",
+						"pages",
+						"loan-calculator.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/loanStep2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/loanStep2?loanId={{loanKey}}",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"loanStep2"
+					],
+					"query": [
+						{
+							"key": "loanId",
+							"value": "{{loanKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loanStep3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/_next/static/TzHnIWU00abRFOZrMQowo/pages/loanStep3.js",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"_next",
+						"static",
+						"TzHnIWU00abRFOZrMQowo",
+						"pages",
+						"loanStep3.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loanStep4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/_next/static/TzHnIWU00abRFOZrMQowo/pages/loanStep4.js",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"_next",
+						"static",
+						"TzHnIWU00abRFOZrMQowo",
+						"pages",
+						"loanStep4.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loanStep5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/_next/static/TzHnIWU00abRFOZrMQowo/pages/loanStep5.js",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"_next",
+						"static",
+						"TzHnIWU00abRFOZrMQowo",
+						"pages",
+						"loanStep5.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loanStep6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c20377ca-cf97-42ea-9239-9086e63d0ddd",
+						"exec": [
+							"pm.test(\"Response time is less than 60000ms\", function () {",
+							"    pm.expect(pm.environment.get(\"testDuration\")).to.be.below(60000);",
+							"});",
+							"",
+							"console.log(\"TestDuration: \" + pm.environment.get(\"testDuration\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://206.189.249.28:3000/_next/static/TzHnIWU00abRFOZrMQowo/pages/loanStep6.js",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"_next",
+						"static",
+						"TzHnIWU00abRFOZrMQowo",
+						"pages",
+						"loanStep6.js"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7405b234-5441-4580-84d9-e7b9e3144ffe",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "26d27c6d-b4ae-435b-9539-5cf5cfd96fca",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Response time is less than 1000ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+					"});",
+					"",
+					"pm.test(\"Saves response time\", function () {",
+					"    testDuration = pm.environment.get(\"testDuration\");",
+					"    pm.environment.set(\"testDuration\", testDuration + pm.response.responseTime);",
+					"});"
+				]
+			}
+		}
+	]
+}
