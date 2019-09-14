@@ -144,6 +144,74 @@
 			"response": []
 		},
 		{
+			"name": "/v1/client PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "http://206.189.249.28:3000"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "cs-CZ,cs;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://206.189.249.28:3000/loan-calculator"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"loanAmount\":40000,\"loanPeriod\":20,\"clientId\":\"{{loanKey}}\"}"
+				},
+				"url": {
+					"raw": "http://206.189.249.28:3000/v1/client",
+					"protocol": "http",
+					"host": [
+						"206",
+						"189",
+						"249",
+						"28"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "v1/loan",
 			"request": {
 				"method": "PUT",
