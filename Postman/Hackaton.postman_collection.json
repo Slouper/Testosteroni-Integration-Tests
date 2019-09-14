@@ -55,9 +55,7 @@
 					"script": {
 						"id": "c6f1b039-3f79-4f4a-b838-35c49da79c95",
 						"exec": [
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -277,7 +275,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "C:/Users/jan.konigsmark/Downloads/IMG_2369.jpg"
+							"src": "/C:/Users/jan.konigsmark/Downloads/IMG_2369.jpg"
 						}
 					]
 				},
