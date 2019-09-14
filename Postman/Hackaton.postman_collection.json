@@ -275,7 +275,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "Postman/IMG_2369.jpg"
+							"src": "/C:/Users/jan.konigsmark/Downloads/IMG_2369.jpg"
 						}
 					]
 				},
@@ -684,7 +684,9 @@
 					"pm.test(\"Saves response time\", function () {",
 					"    testDuration = pm.environment.get(\"testDuration\");",
 					"    pm.environment.set(\"testDuration\", testDuration + pm.response.responseTime);",
-					"});"
+					"});",
+					"",
+					"console.log(\"TestDuration: \" + pm.environment.get(\"testDuration\"))"
 				]
 			}
 		}
