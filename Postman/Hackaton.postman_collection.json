@@ -476,7 +476,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://206.189.249.28:3000/docs/podminky.pdf",
+					"raw": "http://206.189.249.28:3000/docs/podminkyv2.pdf",
 					"protocol": "http",
 					"host": [
 						"206",
@@ -487,7 +487,7 @@
 					"port": "3000",
 					"path": [
 						"docs",
-						"podminky.pdf"
+						"podminkyv2.pdf"
 					]
 				}
 			},
@@ -695,29 +695,6 @@
 						"{{buildId}}",
 						"pages",
 						"loanStep6.js"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/docs/podminky.pdf",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://206.189.249.28:3000/docs/podminky.pdf",
-					"protocol": "http",
-					"host": [
-						"206",
-						"189",
-						"249",
-						"28"
-					],
-					"port": "3000",
-					"path": [
-						"docs",
-						"podminky.pdf"
 					]
 				}
 			},
