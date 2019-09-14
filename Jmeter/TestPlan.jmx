@@ -61,10 +61,10 @@
         <stringProp name="Threads initial delay">0</stringProp>
         <stringProp name="Start users count">10</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">10</stringProp>
+        <stringProp name="Start users period">120</stringProp>
         <stringProp name="Stop users count">10</stringProp>
-        <stringProp name="Stop users period">5</stringProp>
-        <stringProp name="flighttime">60</stringProp>
+        <stringProp name="Stop users period">30</stringProp>
+        <stringProp name="flighttime">450</stringProp>
         <stringProp name="rampUp">5</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -343,8 +343,8 @@
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/v1/upload" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\petr.sloup\Downloads\vyzva.pdf" elementType="HTTPFileArg">
-                  <stringProp name="File.path">C:\Users\petr.sloup\Downloads\vyzva.pdf</stringProp>
+                <elementProp name="file.pdf" elementType="HTTPFileArg">
+                  <stringProp name="File.path">file.pdf</stringProp>
                   <stringProp name="File.paramname">file</stringProp>
                   <stringProp name="File.mimetype">application/pdf</stringProp>
                 </elementProp>
@@ -524,7 +524,7 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -559,7 +559,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -596,7 +596,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
